@@ -1,0 +1,112 @@
+<h1>Regisration form by reactive approch</h1>
+<form [formGroup]="registrationForm">
+ 
+    <h1>User registrationForm</h1>
+    <!-- userName-->
+    <div style="margin: 5px; padding: 5px">
+      <label for="userid">*Please enter your name</label> &nbsp; &nbsp;
+      <input
+        id="userid"
+        name="userName"
+        type="text"
+        placeholder="Enter your name"
+        formControLName = "UserName"
+      />
+      <br />
+      <!-- *ngIf="locUserName.touched && locUserName.invalid"  -->
+      &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; 
+      <span *ngIf="registrationForm.get('UserName')?.invalid && registrationForm.get('UserName')?.touched" 
+        style="color: red">
+        Please enter your name</span>
+    </div>
+  
+    <!-- userEmail -->
+    <div style="margin: 5px; padding: 5px">
+      <label for="userid">*Please enter your Email</label> &nbsp; &nbsp;
+      <input
+        id="useremailID"
+        name="userEmail"
+        type="text"
+        placeholder="Enter your Email"
+        formControLName = "UserEmail"
+      />
+      <br />
+      <!-- *ngIf="locUserName.touched && locUserName.invalid"  -->
+      &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; 
+      <span *ngIf="registrationForm.get('UserEmail')?.errors?.['required'] && registrationForm.get('UserEmail')?.touched" 
+        style="color: red">
+        Please enter your EMail</span>
+  
+        <span *ngIf="registrationForm.get('UserEmail')?.errors?.['email'] && registrationForm.get('UserEmail')?.touched" 
+        style="color: red">
+        Please enter your valid Email.....</span>
+    </div>
+  
+    <!-- userComments -->
+    <div style="margin: 5px; padding: 5px">
+      <label for="userid">*Please enter your Comments</label> &nbsp; &nbsp;
+      <textarea
+        id="userCommentsID"
+        name="userComments"
+        type="text"
+        placeholder="Enter your Comments"
+        formControLName = "UserComments"
+      ></textarea>
+      <br />
+      <!-- *ngIf="locUserName.touched && locUserName.invalid"  -->
+      &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; 
+      <span *ngIf="registrationForm.get('UserComments')?.errors?.['required'] && registrationForm.get('UserComments')?.touched" 
+        style="color: red">
+        Please enter your valuable commments..</span>
+  
+        <span *ngIf="registrationForm.get('userComments')?.errors?.['minLength'] && registrationForm.get('userComments')?.touched" 
+        style="color: red">
+        Please enter Atleast 3 charcters</span>
+    </div>
+  
+    <strong>valid | invalid | pristine | dirty | valid | invalid</strong>
+    <div style="margin-left:20px">
+      <button (click)="evtClick()">Click</button>
+    </div>
+    <!-- user owen vachicle -->
+
+    <div style="margin: 5px; padding: 5px">
+        <label for="userid">*Please enter your Comments</label> &nbsp; &nbsp;
+        <textarea
+          id="userCommentsID"
+          name="userComments"
+          type="text"
+          placeholder="Enter your Comments"
+          formControLName = "UserComments"
+        ></textarea>
+
+        <select FormControLName="UserVehicle">
+            <option value="AP01234">DUK</option>
+            <option value="AP01254">YAMAHA</option>
+            <option value="AP01264">KTM</option>
+        </select>
+        <br />
+        <!-- *ngIf="locUserName.touched && locUserName.invalid"  -->
+        &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; 
+        <span *ngIf="registrationForm.get('UserVehicle')?.errors?.['required'] && registrationForm.get('UserVehicle')?.touched" 
+          style="color: red">
+          Please enter your favr.vehicle..</span>
+    
+          <!-- <span *ngIf="registrationForm.get('UserVehicle')?.errors?.['minLength'] && registrationForm.get('UserVehicle')?.touched" 
+          style="color: red">
+          Please enter Atleast 3 charcters</span> -->
+      </div>
+    
+      <strong>valid | invalid | pristine | dirty | valid | invalid</strong>
+      <div style="margin-left:20px">
+        <button (click)="evtClick()">Click</button>
+      </div>
+    
+  </form>
+  <!-- 
+  {
+     userName : "Madan"
+  } 
+  
+  .net or java or phython
+  -->

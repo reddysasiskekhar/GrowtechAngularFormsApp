@@ -1,0 +1,13 @@
+input.ng-touched.ng-invalid{
+    border:2px solid red;
+}
+
+textarea.ng-touched.ng-invalid{
+    border:2px solid red;
+}
+select.ng-touched.ng-invalid{
+    border:2px solid red;
+    width: 150px;
+    height: 100px;
+    background-color: blue;
+}

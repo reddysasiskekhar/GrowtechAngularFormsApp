@@ -1,0 +1,86 @@
+<form #registerForm="ngForm" ngForm>
+ 
+    <h1>User registration form</h1>
+    <!-- userName-->
+    <div style="margin: 5px; padding: 5px">
+      <label for="userid">*Please enter your name</label> &nbsp; &nbsp;
+      <input
+        id="userid"
+        name="userName"
+        type="text"
+        placeholder="Enter your name"
+        ngModel
+        required
+        #locUserName = ngModel
+      />
+      <br />
+      <!-- *ngIf="locUserName.touched && locUserName.invalid"  -->
+      &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; 
+      <span *ngIf="locUserName.touched && locUserName.errors?.['required']" 
+        style="color: red">
+        Please enter your name</span>
+    </div>
+  
+    <!-- userEmail -->
+    <div style="margin: 5px; padding: 5px">
+      <label for="userid">*Please enter your Email</label> &nbsp; &nbsp;
+      <input
+        id="useremailID"
+        name="userEmail"
+        type="text"
+        placeholder="Enter your Email"
+        ngModel
+        required
+        email
+        #locUserEmail = ngModel
+      />
+      <br />
+      <!-- *ngIf="locUserName.touched && locUserName.invalid"  -->
+      &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; 
+      <span *ngIf="locUserEmail.touched && locUserEmail.errors?.['required']" 
+        style="color: red">
+        Please enter your EMail</span>
+  
+        <span *ngIf="locUserEmail.touched && locUserEmail.errors?.['email']" 
+        style="color: red">
+        Please enter your valid Email.....</span>
+    </div>
+  
+    <!-- userComments -->
+    <div style="margin: 5px; padding: 5px">
+      <label for="userid">*Please enter your Comments</label> &nbsp; &nbsp;
+      <textarea
+        id="userCommentsID"
+        name="userComments"
+        type="text"
+        placeholder="Enter your Comments"
+        ngModel
+        required
+        minlength="3"
+        #locUserComments = ngModel
+      ></textarea>
+      <br />
+      <!-- *ngIf="locUserName.touched && locUserName.invalid"  -->
+      &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; 
+      <span *ngIf="locUserComments.touched && locUserComments.errors?.['required']" 
+        style="color: red">
+        Please enter your valuable commments..</span>
+  
+        <span *ngIf="locUserComments.touched && locUserComments.errors?.['minlength']" 
+        style="color: red">
+        Please enter Atleast 3 charcters</span>
+    </div>
+  
+    <strong>valid | invalid | pristine | dirty | valid | invalid</strong>
+    <div style="margin-left:20px">
+      <button (click)="evtClick(registerForm)">Click</button>
+    </div>
+    
+  </form>
+  <!-- 
+  {
+     userName : "Madan"
+  } 
+  
+  .net or java or phython
+  -->
